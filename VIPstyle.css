@@ -53,7 +53,7 @@ body {
   top: 50%;
   right: 79%; /* à gauche du ticket */
   transform: translateY(-50%) translateX(-10px);
-  width: 20px;
+  width: 200px;
   background: rgba(0,0,0,0.85);
   color: #fff;
   padding: 12px;
