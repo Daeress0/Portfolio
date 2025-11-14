@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("images/fonsportes.png") no-repeat center center;
+    background-size: cover;
+    position: relative; /* pour positionner la zone cliquable par-dessus */
+  }
+  
+
+  
+  /* Effet visuel au survol */
+  .click-zone:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    border-radius: 8px; /* optionnel, pour adoucir les bords de la zone */
+  }
+  
+
+  
+
+  .click-zone {
+    position: absolute;
+    top: 23%;
+    left: 4%;
+    width: 10%;
+    height: 70%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    /* porte en perspective pré-fait */
+    clip-path: polygon(
+      10% 0%,   /* coin haut-gauche */
+      95% 5%,   /* coin haut-droit légèrement plus bas */
+      95% 91%, /* coin bas-droit légèrement plus haut */
+      10% 100%   /* coin bas-gauche légèrement plus bas */
+    );
+  
+    background: rgba(255,0,0,0); /* visualisation temporaire */
+  }
+  

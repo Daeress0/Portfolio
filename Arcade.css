@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("images/arcadebg.png");
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  /* Piliers ciblés (remplace la règle globale img{...}) */
+  .pillar-left,
+  .pillar-center,
+  .pillar-right {
+    position: absolute;
+    bottom: 0;
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Positions piliers */
+  .pillar-left { left: 30%; transform: translateX(-50%); }
+  .pillar-center { left: 50%; transform: translateX(-50%); }
+  .pillar-right { right: 30%; transform: translateX(50%); }
+
+  /* --- Animation flottement --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* --- affiche --- */
+  
+  
+  .affiche {
+    width: 15%;
+    height: auto;
+    display: block;
+    animation: float 2s ease-in-out infinite;
+    cursor: pointer;
+    will-change: transform;
+    position: absolute;
+    bottom: 32%;
+    left: 23%;
+    z-index: 10;
+   
+  }
+  
+  
+  /* Texte du affiche */
+  .affiche-text {
+    position: absolute;
+    top: 50%;
+    right: 79%; /* à gauche du affiche */
+    transform: translateY(-50%) translateX(-10px);
+    width: 20px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none; /* empêche le texte de capter le hover */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 5;
+  }
+  
+  .affiche:hover + .affiche-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  
+  .ticket-icon {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0;
+  }
+  
+  /* --- Carte de estampille (à droite) --- */
+  
+  
+  .estampille {
+    width: 15%;
+    height: auto;
+    display: block;
+    animation: float 2s ease-in-out infinite;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+    position: absolute;
+    bottom: 28%;
+    right: 22%;
+    z-index: 10;
+  
+  }
+  
+  /* Texte à droite de la carte */
+  .estampille-text {
+    position: absolute;
+    top: 60%;
+    left: 78%;
+    transform: translateY(-50%) translateX(10px);
+    width: 250px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    line-height: 1.4;
+  }
+  
+  
+  .estampille:hover + .estampille-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  /* --- logo au milieu --- */
+  
+  
+  .logo {
+    width: 15%;
+    left: 43%;
+    height: auto;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    position: absolute;
+    bottom: 35%;
+    z-index: 10;
+  
+  }
+  
+  /* Texte en haut de l'logo */
+  .logo-text {
+    position: absolute;
+    bottom: 65%;
+    left: 38%;
+    transform: translateY(-50%) translateX(10px);
+    width: 500px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    line-height: 1.4;
+  }
+  
+  
+  
+  .logo:hover + .logo-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
