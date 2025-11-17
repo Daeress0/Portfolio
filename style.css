@@ -38,3 +38,28 @@ body {
     background: rgba(255,0,0,0); /* visualisation temporaire */
   }
   
+  /* Nouvelle zone vidéo pour placement */
+.clickzonevideo {
+  position: absolute;
+  top: 23%;      /* Ajuste selon ton placement */
+  left: 20%;     /* Ajuste selon ton placement */
+  width: 10%;    /* Ajuste selon ton placement */
+  height: 70%;   /* Ajuste selon ton placement */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  clip-path: polygon(
+    10% 10%,
+    95% 13%,
+    95% 75%,
+    10% 80%
+  );
+
+  background: rgba(1, 99, 1, 0); /* vert transparent pour placement */
+}
+
+.clickzonevideo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
