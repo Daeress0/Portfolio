@@ -157,3 +157,29 @@ body {
     display: block;
     margin: 10px auto 0;
 }
+
+
+.retour {
+    position: fixed;      /* Toujours visible en haut à gauche même en scroll */
+    top: 20px;            /* Distance depuis le haut */
+    left: 20px;           /* Distance depuis la gauche */
+    width: 200px;          /* Taille de base */
+    height: auto;         /* Conserve les proportions */
+    cursor: pointer;      /* Curseur cliquable */
+    transition: transform 0.2s ease;
+    z-index: 1000;        /* Passe devant tout */
+  }
+  
+  .retour:hover {
+    transform: scale(1.1);  /* Petit zoom au survol */
+  }
+  
+  /* Pour petits écrans */
+  @media (max-width: 600px) {
+    .retour {
+      top: 10px;
+      left: 10px;
+      width: 30px;          /* Image légèrement plus petite */
+    }
+  }
+  

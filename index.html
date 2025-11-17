@@ -9,11 +9,28 @@
 <body>
     <div class="click-zone" onclick="openDoor()"></div>
 
+    
     <script>
-      function openDoor() {
+    function openDoor() {
         window.location.href = "VIP.html";
-      }
+    }
+    
+    // Vérifie si on revient du bouton retour d'Arcade
+    const fromArcade = sessionStorage.getItem("fromArcade") === "true";
+    
+    if (fromArcade) {
+        const zone = document.querySelector(".click-zone");
+        if(zone){
+            zone.style.pointerEvents = "none"; // désactive le clic
+            zone.style.opacity = "0.5";        // grisé pour montrer que c'est désactivé
+        }
+        // Supprime le flag pour la prochaine visite normale
+        sessionStorage.removeItem("fromArcade");
+    }
     </script>
+    
+    </body>
+    </html>
     
 </body>
 </html>
