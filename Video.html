@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="video.css">
+
     <title>Vidéo</title>
 </head>
 <body>
-    coucou
+
+
+    <img src="images/Pillar.png" class="pillar-center" alt="Pilier central">
+
+    <video src="video/TeaserMMI.mp4" class="video" controls autoplay ></video>
+    
+    <div class="video-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      
+      <br>
+      <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+    </div>
+    <a href="#" id="backButton">
+        <img src="images/flecheretour.png" class="flecheretour" alt="Retour accueil">
+    </a>
+    <script>
+        const backBtn = document.getElementById("backButton");
+        
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // empêche la navigation immédiate
+            // On mémorise qu'on revient du bouton retour d'Arcade
+            sessionStorage.setItem("fromVideo", "true");
+            // On navigue vers index.html
+            window.location.href = "index.html";
+        });
+        </script>
+        
 </body>
 </html>

@@ -163,7 +163,7 @@ body {
     position: fixed;      /* Toujours visible en haut à gauche même en scroll */
     top: 20px;            /* Distance depuis le haut */
     left: 20px;           /* Distance depuis la gauche */
-    width: 200px;          /* Taille de base */
+    width: 150px;          /* Taille de base */
     height: auto;         /* Conserve les proportions */
     cursor: pointer;      /* Curseur cliquable */
     transition: transform 0.2s ease;
