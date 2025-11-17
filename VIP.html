@@ -67,5 +67,20 @@
         window.location.href = "Arcade.html";
       }
     </script>
+
+<script>
+  // Détecte les téléphones (taille + user agent)
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)
+      || window.innerWidth < 800;
+  }
+
+  window.addEventListener("load", () => {
+    if (isMobile()) {
+      alert("Cette page est optimisée pour ordinateur. Pour une meilleure expérience, veuillez l’ouvrir sur PC 🚀");
+    }
+  });
+</script>
+
 </body>
 </html>

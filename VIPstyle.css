@@ -200,3 +200,59 @@ body {
 .click-zone:hover .interrogation-img {
   filter: brightness(1); /* plus clair au hover */
 }
+
+
+/* --- Responsivité --- */
+
+/* Tablettes / petits laptops */
+@media (max-width: 900px) {
+  .ticket,
+  .visite,
+  .affiche {
+    width: 25%;
+  }
+
+  .ticket-text,
+  .visite-text,
+  .affiche-text {
+    width: 60%;
+    font-size: 0.8rem;
+  }
+
+  .pillar-left,
+  .pillar-center,
+  .pillar-right {
+    width: 20%;
+  }
+}
+
+/* Téléphones : on masque le décor et évite les bugs */
+@media (max-width: 600px) {
+
+  .ticket,
+  .visite,
+  .affiche,
+  .ticket-text,
+  .visite-text,
+  .affiche-text,
+  .pillar-left,
+  .pillar-center,
+  .pillar-right,
+  .click-zone {
+    display: none !important;
+  }
+
+  body {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+  }
+
+  body::before {
+    content: "Cette expérience est prévue pour ordinateur 💻";
+    display: block;
+    margin-top: 30vh;
+  }
+}
