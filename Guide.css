@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("images/arcadebg.png");
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* --- Piliers --- */
+.pillar-left,
+.pillar-center,
+.pillar-right {
+    position: absolute;
+    bottom: 0;
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.pillar-left { left: 30%; transform: translateX(-50%); }
+.pillar-center { left: 50%; transform: translateX(-50%); }
+.pillar-right { right: 30%; transform: translateX(50%); }

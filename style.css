@@ -35,7 +35,6 @@ body {
       10% 100%   /* coin bas-gauche légèrement plus bas */
     );
   
-    background: rgba(255,0,0,0); /* visualisation temporaire */
   }
   
   /* Nouvelle zone vidéo pour placement */
@@ -55,11 +54,37 @@ body {
     10% 80%
   );
 
-  background: rgba(1, 99, 1, 0); /* vert transparent pour placement */
 }
 
 .clickzonevideo:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
   border-radius: 8px;
+}
+
+/* Zone guide */
+.clickzoneguide {
+    position: absolute;
+    top: 23%;      
+    left: 33%;     
+    width: 10%;    
+    height: 70%;   
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    clip-path: polygon(
+      10% 12%,/* coin haut-gauche */
+      99% 13%,/* coin haut-droit  */
+      95% 73%,/* coin bas-droit  */
+      10% 75%/* coin bas-gauche*/
+       
+    );
+
+    background: rgba(184, 98, 0, 0.3); /* vert clair semi-transparent pour voir la zone */
+}
+
+.clickzoneguide:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
 }

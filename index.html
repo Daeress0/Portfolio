@@ -8,12 +8,14 @@
 </head>
 <body>
 
-  <!-- Zone VIP existante -->
+  <!-- Zone VIP (active par défaut) -->
   <div class="click-zone" onclick="openDoor()"></div>
   
-  <!-- Nouvelle zone vidéo, invisible par défaut -->
-  <div class="clickzonevideo" id="videoZone" style="display:none;" onclick="openVideo()"></div>
+  <!-- Zone vidéo (inactive et invisible par défaut) -->
+  <div class="clickzonevideo" id="videoZone" onclick="openVideo()" style="display:none;"></div>
   
+  <div class="clickzoneguide" id="guideZone" onclick="openGuide()" style="display:block;"></div>
+
   <script>
   function openDoor() {
       window.location.href = "VIP.html";
@@ -22,25 +24,37 @@
   function openVideo() {
       window.location.href = "Video.html";
   }
+
+    
+  function openGuide() {
+      window.location.href = "Guide.html";
+  }
   
-  // Vérifie si on revient du bouton retour d'Arcade
+  // Flags pour savoir d’où on revient
   const fromArcade = sessionStorage.getItem("fromArcade") === "true";
-  
-  if(fromArcade){
-      // Désactive la zone VIP classique
+  const fromVideo = sessionStorage.getItem("fromVideo") === "true";
+
+  if (fromVideo) {
+      // On vient de Video.html → aucune zone cliquable
+      const vipZone = document.querySelector(".click-zone");
+      const videoZone = document.getElementById("videoZone");
+      if(vipZone) vipZone.style.display = "none";
+      if(videoZone) videoZone.style.display = "none";
+
+      sessionStorage.removeItem("fromVideo");
+  } else if (fromArcade) {
+      // On vient d'Arcade.html → désactive VIP, active vidéo
       const vipZone = document.querySelector(".click-zone");
       if(vipZone){
           vipZone.style.pointerEvents = "none";
-          vipZone.style.opacity = "0.5";
+          vipZone.style.opacity = "0.5"; // visuel pour indiquer que c'est désactivé
       }
 
-      // Active la zone vidéo
       const videoZone = document.getElementById("videoZone");
       if(videoZone){
-          videoZone.style.display = "block";
+          videoZone.style.display = "block"; // rend cliquable
       }
 
-      // Supprime le flag pour ne pas bloquer les prochaines visites
       sessionStorage.removeItem("fromArcade");
   }
   </script>
