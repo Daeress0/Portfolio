@@ -106,7 +106,6 @@ body {
      
   );
 
-  background: rgba(165, 47, 255, 0.3); /* vert clair semi-transparent pour voir la zone */
 }
 
 .clickzonelogo:hover {
@@ -143,3 +142,4 @@ body {
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
   border-radius: 8px;
 }
+
