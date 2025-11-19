@@ -14,5 +14,66 @@
     <img src="images/Pillar.png" class="pillar-center" alt="Pilier central">
     <img src="images/Pillar3.png" class="pillar-right" alt="Pilier droit">
 
+
+    <img src="images/GuideBou.png" class="bou" alt="Tchoubou">
+    <div class="bou-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.orem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.orem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <br>
+      <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+    </div>  
+
+  <!-- Carte de visite à droite -->
+    <img src="images/Guidemockup.png" class="mockup" alt="mockup">
+    <div class="mockup-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <br>
+      <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+    </div>
+
+    <img src="images/GuideFront.png" class="front" alt="front">
+    <div class="front-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.orem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.orem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <br>
+      <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+    </div>
+
+    <a href="#" id="backButton">
+        <img src="images/flecheretour.png" class="flecheretour" alt="Retour accueil">
+    </a>
+
+    <script>
+        const backBtn = document.getElementById("backButton");
+        
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // empêche la navigation immédiate
+            // On mémorise qu'on revient du bouton retour d'Arcade
+            sessionStorage.setItem("fromGuide", "true");
+            // On navigue vers index.html
+            window.location.href = "index.html";
+        });
+        </script>
+        
+
 </body>
 </html>

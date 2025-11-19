@@ -17,47 +17,86 @@
   <div class="clickzoneguide" id="guideZone" onclick="openGuide()" style="display:block;"></div>
 
   <script>
-  function openDoor() {
-      window.location.href = "VIP.html";
-  }
-  
-  function openVideo() {
-      window.location.href = "Video.html";
-  }
-
+    function openDoor() {
+        window.location.href = "VIP.html";
+    }
     
-  function openGuide() {
-      window.location.href = "Guide.html";
-  }
-  
-  // Flags pour savoir d’où on revient
-  const fromArcade = sessionStorage.getItem("fromArcade") === "true";
-  const fromVideo = sessionStorage.getItem("fromVideo") === "true";
-
-  if (fromVideo) {
-      // On vient de Video.html → aucune zone cliquable
-      const vipZone = document.querySelector(".click-zone");
-      const videoZone = document.getElementById("videoZone");
-      if(vipZone) vipZone.style.display = "none";
-      if(videoZone) videoZone.style.display = "none";
-
-      sessionStorage.removeItem("fromVideo");
-  } else if (fromArcade) {
-      // On vient d'Arcade.html → désactive VIP, active vidéo
-      const vipZone = document.querySelector(".click-zone");
-      if(vipZone){
-          vipZone.style.pointerEvents = "none";
-          vipZone.style.opacity = "0.5"; // visuel pour indiquer que c'est désactivé
-      }
-
-      const videoZone = document.getElementById("videoZone");
-      if(videoZone){
-          videoZone.style.display = "block"; // rend cliquable
-      }
-
-      sessionStorage.removeItem("fromArcade");
-  }
-  </script>
-
+    function openVideo() {
+        window.location.href = "Video.html";
+    }
+    
+    function openGuide() {
+        window.location.href = "Guide.html";
+    }
+    
+    const vipZone = document.querySelector(".click-zone");
+    const videoZone = document.getElementById("videoZone");
+    const guideZone = document.getElementById("guideZone");
+    
+    // Flags
+    const fromArcade = sessionStorage.getItem("fromArcade") === "true";
+    const fromVideo  = sessionStorage.getItem("fromVideo") === "true";
+    const fromGuide  = sessionStorage.getItem("fromGuide") === "true";
+    
+    // ---------------------------------
+    // ⭐ ÉTAT PAR DÉFAUT (première visite)
+    // ---------------------------------
+    vipZone.style.display   = "block";
+    videoZone.style.display = "none";
+    guideZone.style.display = "none";
+    
+    // ---------------------------------
+    // 🔁 Cas 1 : Retour depuis Video.html
+    // → Débloque seulement la zone Guide
+    // ---------------------------------
+    if (fromVideo) {
+    
+        vipZone.style.display = "none";
+        videoZone.style.display = "none";
+    
+        guideZone.style.display = "block";
+        guideZone.style.pointerEvents = "auto";
+        guideZone.style.opacity = "1";
+    
+        sessionStorage.removeItem("fromVideo");
+    }
+    
+    // ---------------------------------
+    // 🔁 Cas 2 : Retour depuis Arcade.html
+    // → Débloque seulement la zone Vidéo
+    // ---------------------------------
+    else if (fromArcade) {
+    
+        vipZone.style.pointerEvents = "none";
+        vipZone.style.opacity = "0.5";
+    
+        videoZone.style.display = "block";
+        videoZone.style.pointerEvents = "auto";
+        videoZone.style.opacity = "1";
+    
+        guideZone.style.display = "none";
+    
+        sessionStorage.removeItem("fromArcade");
+    }
+    
+    // ---------------------------------
+    // 🔁 Cas 3 : Retour depuis Guide.html
+    // → ❌ TOUT est désactivé et non-cliquable
+    // ---------------------------------
+    else if (fromGuide) {
+    
+        vipZone.style.display = "none";
+        videoZone.style.display = "none";
+        guideZone.style.display = "none";
+    
+        // Sécurité supplémentaire : on neutralise tout
+        vipZone.style.pointerEvents = "none";
+        videoZone.style.pointerEvents = "none";
+        guideZone.style.pointerEvents = "none";
+    
+        sessionStorage.removeItem("fromGuide");
+    }
+    </script>
+    
 </body>
 </html>
