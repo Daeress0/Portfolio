@@ -2,7 +2,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: url("images/logoBG.png") no-repeat center center;
+    background: url("images/logobg.png") no-repeat center center;
     background-size: cover;
     position: relative; /* pour positionner éléments absolus */
   }
