@@ -15,6 +15,7 @@
   <div class="clickzonevideo" id="videoZone" onclick="openVideo()" style="display:none;"></div>
   
   <div class="clickzoneguide" id="guideZone" onclick="openGuide()" style="display:block;"></div>
+  <div class="clickzonelogo" id="logoZone" onclick="openLogo()" style="display:block;"></div>
 
   <script>
     function openDoor() {
@@ -28,7 +29,12 @@
     function openGuide() {
         window.location.href = "Guide.html";
     }
+
+    function openLogo() {
+        window.location.href = "Logo.html";
+    }
     
+
     const vipZone = document.querySelector(".click-zone");
     const videoZone = document.getElementById("videoZone");
     const guideZone = document.getElementById("guideZone");
@@ -44,7 +50,6 @@
     vipZone.style.display   = "block";
     videoZone.style.display = "none";
     guideZone.style.display = "none";
-    
     // ---------------------------------
     // 🔁 Cas 1 : Retour depuis Video.html
     // → Débloque seulement la zone Guide
@@ -97,6 +102,6 @@
         sessionStorage.removeItem("fromGuide");
     }
     </script>
-    
+         
 </body>
 </html>

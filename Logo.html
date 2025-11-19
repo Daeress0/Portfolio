@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Logo.css">
+
+    <title>Logo</title>
+</head>
+<body>
+    <img src="images/Pillar.png" class="pillar-center" alt="Pilier central">
+
+    <img src="images/Logo.png" class="logo" alt="Logog MMI" >
+
+    
+    <div class="logo-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        
+        <br>
+        <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+      </div>
+      <a href="#" id="backButton">
+          <img src="images/flecheretour.png" class="flecheretour" alt="Retour accueil">
+      </a>
+
+      <script>
+        const backBtn = document.getElementById("backButton");
+        
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // empêche la navigation immédiate
+            // On mémorise qu'on revient du bouton retour d'Arcade
+            sessionStorage.setItem("Logo", "true");
+            // On navigue vers index.html
+            window.location.href = "index.html";
+        });
+        </script>
+</body>
+</html>

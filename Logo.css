@@ -1,0 +1,89 @@
+/* --- Fond de la page --- */
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("images/logoBG.png") no-repeat center center;
+    background-size: cover;
+    position: relative; /* pour positionner éléments absolus */
+  }
+  
+  /* --- Pilier --- */
+  .pillar-center {
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* derrière la vidéo */
+  }
+  
+  /* --- Animation flottement --- */
+  @keyframes float {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); } /* flotte vers le haut */
+  }
+  
+  /* --- Vidéo au-dessus du pilier avec flottement --- */
+  .logo {
+    position: absolute;
+    bottom: 50%;             
+    left: 50%;
+    width: 35%;
+    height: auto;
+    z-index: 2;
+    transform: translateX(-50%); /* centré horizontalement */
+    border-radius: 20px; /* valeur à ajuster */
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* --- Texte qui apparaît au hover --- */
+  .logo-text {
+    position: absolute;
+    top: 40%;
+    right: 70%; 
+    width: 400px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none; /* empêche de capter le hover */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 5;
+    transform: translateY(-50%) translateX(-10px);
+  }
+  
+  /* Hover sur la vidéo */
+  .logo:hover + .logo-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  /* --- Icône ticket --- */
+  .ticket-icon {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0;
+  }
+  
+
+  .flecheretour {
+    position: fixed;      /* Toujours visible en haut à gauche même en scroll */
+    top: 20px;            /* Distance depuis le haut */
+    left: 40px;           /* Distance depuis la gauche */
+    width: 90px;          /* Taille de base */
+    height: auto;         /* Conserve les proportions */
+    cursor: pointer;      /* Curseur cliquable */
+    transition: transform 0.2s ease;
+    z-index: 1000;        /* Passe devant tout */
+  }
+  
+  .flecheretour:hover {
+    transform: scale(1.1);  /* Petit zoom au survol */
+  }
