@@ -13,11 +13,12 @@
   
   <!-- Zone vidéo (inactive et invisible par défaut) -->
   <div class="clickzonevideo" id="videoZone" onclick="openVideo()" style="display:none;"></div>
-  
   <div class="clickzoneguide" id="guideZone" onclick="openGuide()" style="display:block;"></div>
   <div class="clickzonelogo" id="logoZone" onclick="openLogo()" style="display:block;"></div>
   <div class="clickzoneaffiche" id="afficheZone" onclick="openAffiche()" style="display:block;"></div>
   <div class="clickzoneloups" id="loupsZone" onclick="openLoups()" style="display:block;"></div>
+  <div class="clickzonefinal" id="finalZone" onclick="openFinal()" style="display:block;"></div>
+
 
 
 
@@ -32,6 +33,8 @@ function openGuide() { window.location.href = "guide.html"; }
 function openLogo() { window.location.href = "logo.html"; }
 function openAffiche() { window.location.href = "affiche.html"; }
 function openLoups() { window.location.href = "fermedesloups.html"; }
+function openFinal() { window.location.href = "final.html"; }
+
 
 // -----------------------------------------------------------
 // Sélection des zones
@@ -51,6 +54,8 @@ const fromVideo    = sessionStorage.getItem("fromVideo") === "true";
 const fromGuide    = sessionStorage.getItem("fromGuide") === "true";
 const fromLogo     = sessionStorage.getItem("fromLogo") === "true";
 const fromAffiche  = sessionStorage.getItem("fromAffiche") === "true";
+const fromLoup     = sessionStorage.getItem("fromFerme") === "true";
+
 
 // -----------------------------------------------------------
 // État par défaut (au chargement de la salle)
