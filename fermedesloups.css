@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("images/fermebg.png") no-repeat center center;
+    background-size: cover;
+    position: relative; /* pour positionner la zone cliquable par-dessus */
+  }
+
+  /* --- Piliers --- */
+.pillar-left,
+.pillar-center,
+.pillar-right {
+    position: absolute;
+    bottom: 0;
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+}
+
+.pillar-left { left: 30%; transform: translateX(-50%); }
+.pillar-center { left: 50%; transform: translateX(-50%); }
+.pillar-right { right: 30%; transform: translateX(50%); }
+
+/* --- Animation flottement --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+ /* --- Élément gauche (affiche) --- */
+  
+ .logo {
+    width: 15%;
+    height: auto;
+    display: block;
+    animation: float 2s ease-in-out infinite;
+    cursor: pointer;
+    will-change: transform;
+    position: absolute;
+    bottom: 32%;
+    left: 23%;
+    z-index: 10;
+  }
+  
+  .logo-text {
+    position: absolute;
+    top: 50%;
+    right: 79%;
+    transform: translateY(-50%) translateX(-10px);
+    width: 200px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 5;
+  }
+  
+  .logo:hover + .logo-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  .ticket-icon {
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0;
+  }
+  
+  /* --- Élément droit (banniere) --- */
+  
+  .banniere {
+    width: 20%;
+    height: auto;
+    display: block;
+    animation: float 2s ease-in-out infinite;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30%;
+    right: 20%;
+    z-index: 10;
+  }
+  
+  .banniere-text {
+    position: absolute;
+    top: 60%;
+    left: 83%;
+    transform: translateY(-50%) translateX(10px);
+    width: 250px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .banniere:hover + .banniere-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  /* --- Élément central (logo) --- */
+  
+  .affiche {
+    width: 15%;
+    left: 43%;
+    height: auto;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    position: absolute;
+    bottom: 36%;
+    z-index: 10;
+  }
+  
+  /* Correction : texte → .logo-text */
+  .affiche-text {
+    position: absolute;
+    bottom: 70%;
+    left: 33%;
+    transform: translateY(-50%) translateX(10px);
+    width: 700px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .affiche:hover + .affiche-text {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  
+  /* --- Responsivité --- */
+  
+  @media (max-width: 900px) {
+    .logo,
+    .banniere,
+    .affiche {
+      width: 25%;
+    }
+  
+    .logo-text,
+    .banniere-text,
+    .affiche-text {
+      width: 60%;
+      font-size: 0.8rem;
+    }
+  
+    .pillar-left,
+    .pillar-center,
+    .pillar-right {
+      width: 20%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .logo,
+    .banniere,
+    .affiche,
+    .logo-text,
+    .banniere-text,
+    .affiche-text,
+    .pillar-left,
+    .pillar-center,
+    .pillar-right {
+      display: none !important;
+    }
+  
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      font-size: 1.2rem;
+    }
+  
+    body::before {
+      content: "Cette expérience est prévue pour ordinateur 💻";
+      display: block;
+      margin-top: 30vh;
+    }
+  }
+  
+
+
+  .flecheretour {
+    position: fixed;      /* Toujours visible en haut à gauche même en scroll */
+    top: 20px;            /* Distance depuis le haut */
+    left: 40px;           /* Distance depuis la gauche */
+    width: 90px;          /* Taille de base */
+    height: auto;         /* Conserve les proportions */
+    cursor: pointer;      /* Curseur cliquable */
+    transition: transform 0.2s ease;
+    z-index: 1000;        /* Passe devant tout */
+  }
+  
+  .flecheretour:hover {
+    transform: scale(1.1);  /* Petit zoom au survol */
+  }

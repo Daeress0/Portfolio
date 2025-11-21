@@ -150,3 +150,31 @@ body {
   border-radius: 8px;
 }
 
+
+/* Zone guide */
+.clickzoneloups {
+  position: absolute;
+  top: 18%;      
+  right: 5%;     
+  width: 10%;    
+  height: 90%;   
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+
+
+  clip-path: polygon(
+    10% 11%,/* coin haut-gauche */
+    100% 6%,/* coin haut-droit  */
+    99% 80%,/* coin bas-droit  */
+    10% 72%/* coin bas-gauche*/
+     
+  );
+}
+
+.clickzoneloups:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+

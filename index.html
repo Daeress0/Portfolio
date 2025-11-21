@@ -17,59 +17,68 @@
   <div class="clickzoneguide" id="guideZone" onclick="openGuide()" style="display:block;"></div>
   <div class="clickzonelogo" id="logoZone" onclick="openLogo()" style="display:block;"></div>
   <div class="clickzoneaffiche" id="afficheZone" onclick="openAffiche()" style="display:block;"></div>
+  <div class="clickzoneloups" id="loupsZone" onclick="openLoups()" style="display:block;"></div>
 
 
-  <script>
+
+    <script>
+
+        // -----------------------------------------------------------
+// Fonctions pour ouvrir les pages
+// -----------------------------------------------------------
 function openDoor() { window.location.href = "vip.html"; }
 function openVideo() { window.location.href = "video.html"; }
 function openGuide() { window.location.href = "guide.html"; }
 function openLogo() { window.location.href = "logo.html"; }
 function openAffiche() { window.location.href = "affiche.html"; }
+function openLoups() { window.location.href = "fermedesloups.html"; }
 
- const vipZone   = document.querySelector(".click-zone");
-const videoZone = document.getElementById("videoZone");
-const guideZone = document.getElementById("guideZone");
-const logoZone  = document.getElementById("logoZone");
+// -----------------------------------------------------------
+// Sélection des zones
+// -----------------------------------------------------------
+const vipZone     = document.querySelector(".click-zone");
+const videoZone   = document.getElementById("videoZone");
+const guideZone   = document.getElementById("guideZone");
+const logoZone    = document.getElementById("logoZone");
 const afficheZone = document.getElementById("afficheZone");
+const loupsZone   = document.getElementById("loupsZone");
 
-// Flags
-const fromArcade = sessionStorage.getItem("fromArcade") === "true";
-const fromVideo  = sessionStorage.getItem("fromVideo") === "true";
-const fromGuide  = sessionStorage.getItem("fromGuide") === "true";
-const fromLogo   = sessionStorage.getItem("fromLogo") === "true";
+// -----------------------------------------------------------
+// Flags depuis sessionStorage
+// -----------------------------------------------------------
+const fromArcade   = sessionStorage.getItem("fromArcade") === "true";
+const fromVideo    = sessionStorage.getItem("fromVideo") === "true";
+const fromGuide    = sessionStorage.getItem("fromGuide") === "true";
+const fromLogo     = sessionStorage.getItem("fromLogo") === "true";
+const fromAffiche  = sessionStorage.getItem("fromAffiche") === "true";
 
-// -----------------------
-// État par défaut
-// -----------------------
-vipZone.style.display   = "block";
+// -----------------------------------------------------------
+// État par défaut (au chargement de la salle)
+// -----------------------------------------------------------
+vipZone.style.display     = "block";
 vipZone.style.pointerEvents = "auto";
-vipZone.style.opacity = "1";
+vipZone.style.opacity     = "1";
 
-videoZone.style.display = "none";
-guideZone.style.display = "none";
-logoZone.style.display  = "none";
+videoZone.style.display   = "none";
+guideZone.style.display   = "none";
+logoZone.style.display    = "none";
 afficheZone.style.display = "none";
+loupsZone.style.display   = "none";
 
-// ---------------------------------------------------
-// Cas 1 : Retour depuis Video.html → débloque Guide
-// ---------------------------------------------------
+// -----------------------------------------------------------
+// Gestion des retours depuis d’autres pages
+// -----------------------------------------------------------
 if (fromVideo) {
-
+    // Après Video → débloque Guide
     vipZone.style.display = "none";
-    videoZone.style.display = "none";
-
     guideZone.style.display = "block";
     guideZone.style.pointerEvents = "auto";
     guideZone.style.opacity = "1";
 
     sessionStorage.removeItem("fromVideo");
 }
-
-// -------------------------------------------------------
-// Cas 2 : Retour depuis Arcade.html → débloque Vidéo
-// -------------------------------------------------------
 else if (fromArcade) {
-
+    // Après Arcade → débloque Vidéo
     vipZone.style.pointerEvents = "none";
     vipZone.style.opacity = "0.5";
 
@@ -77,16 +86,10 @@ else if (fromArcade) {
     videoZone.style.pointerEvents = "auto";
     videoZone.style.opacity = "1";
 
-    guideZone.style.display = "none";
-
     sessionStorage.removeItem("fromArcade");
 }
-
-// -----------------------------------------------------------
-// Cas 3 : Retour depuis Guide.html → débloque uniquement LOGO
-// -----------------------------------------------------------
 else if (fromGuide) {
-
+    // Après Guide → débloque Logo
     vipZone.style.display = "none";
     videoZone.style.display = "none";
     guideZone.style.display = "none";
@@ -97,25 +100,34 @@ else if (fromGuide) {
 
     sessionStorage.removeItem("fromGuide");
 }
-
-// -----------------------------------------------------------
-// Cas 4 : Retour depuis Logo.html → débloque AFFiCHE uniquement
-// -----------------------------------------------------------
 else if (fromLogo) {
-
-    // tout caché
+    // Après Logo → débloque Affiche
     vipZone.style.display = "none";
     videoZone.style.display = "none";
     guideZone.style.display = "none";
     logoZone.style.display = "none";
 
-    // seule Affiche devient dispo
     afficheZone.style.display = "block";
     afficheZone.style.pointerEvents = "auto";
     afficheZone.style.opacity = "1";
 
     sessionStorage.removeItem("fromLogo");
 }
+else if (fromAffiche) {
+    // Après Affiche → débloque Loups
+    vipZone.style.display = "none";
+    videoZone.style.display = "none";
+    guideZone.style.display = "none";
+    logoZone.style.display = "none";
+    afficheZone.style.display = "none";
+
+    loupsZone.style.display = "block";
+    loupsZone.style.pointerEvents = "auto";
+    loupsZone.style.opacity = "1";
+
+    sessionStorage.removeItem("fromAffiche");
+}
+
 
     </script>
 
