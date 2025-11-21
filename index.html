@@ -20,6 +20,7 @@
 
 
   <script>
+<<<<<<< HEAD
 function openDoor() { window.location.href = "vip.html"; }
 function openVideo() { window.location.href = "video.html"; }
 function openGuide() { window.location.href = "Guide.html"; }
@@ -88,6 +89,30 @@ else if (fromArcade) {
 else if (fromGuide) {
 
     vipZone.style.display = "none";
+=======
+    function openDoor() { window.location.href = "vip.html"; }
+    function openVideo() { window.location.href = "video.html"; }
+    function openGuide() { window.location.href = "guide.html"; }
+    function openLogo() { window.location.href = "logo.html"; }
+    function openAffiche() { window.location.href = "affiche.html"; }
+
+    
+    const vipZone   = document.querySelector(".click-zone");
+    const videoZone = document.getElementById("videoZone");
+    const guideZone = document.getElementById("guideZone");
+    const logoZone  = document.getElementById("logoZone");
+    
+    // Flags
+    const fromArcade = sessionStorage.getItem("fromArcade") === "true";
+    const fromVideo  = sessionStorage.getItem("fromVideo") === "true";
+    const fromGuide  = sessionStorage.getItem("fromGuide") === "true";
+    const fromLogo   = sessionStorage.getItem("fromLogo") === "true";
+    
+    // -----------------------
+    // État par défaut
+    // -----------------------
+    vipZone.style.display   = "block";
+>>>>>>> 0d9767dd8d83eac86b65ca78e5719db7938f786d
     videoZone.style.display = "none";
     guideZone.style.display = "none";
 
@@ -122,3 +147,4 @@ else if (fromLogo) {
 
 </body>
 </html>
+
