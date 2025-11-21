@@ -26,6 +26,8 @@ body {
     height: 70%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+
   
     /* porte en perspective pré-fait */
     clip-path: polygon(
@@ -46,6 +48,8 @@ body {
   height: 70%;   /* Ajuste selon ton placement */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+
 
   clip-path: polygon(
     10% 10%,
@@ -97,6 +101,8 @@ body {
   height: 70%;   
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+
 
   clip-path: polygon(
     23% 14%,/* coin haut-gauche */
@@ -106,7 +112,6 @@ body {
      
   );
 
-  background: rgba(165, 47, 255, 0.3); /* vert clair semi-transparent pour voir la zone */
 }
 
 .clickzonelogo:hover {
@@ -126,16 +131,17 @@ body {
   height: 70%;   
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+
 
   clip-path: polygon(
-    23% 14%,/* coin haut-gauche */
-    93% 13%,/* coin haut-droit  */
-    94% 77%,/* coin bas-droit  */
-    23% 75%/* coin bas-gauche*/
+    27% 13%,/* coin haut-gauche */
+    95% 11%,/* coin haut-droit  */
+    96% 81%,/* coin bas-droit  */
+    28% 76%/* coin bas-gauche*/
      
   );
 
-  background: rgba(165, 47, 255, 0.3); /* vert clair semi-transparent pour voir la zone */
 }
 
 .clickzoneaffiche:hover {

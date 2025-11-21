@@ -20,97 +20,103 @@
 
 
   <script>
-    function openDoor() { window.location.href = "vip.html"; }
-    function openVideo() { window.location.href = "video.html"; }
-    function openGuide() { window.location.href = "Guide.html"; }
-    function openLogo() { window.location.href = "logo.html"; }
-    function openAffiche() { window.location.href = "affiche.html"; }
+function openDoor() { window.location.href = "vip.html"; }
+function openVideo() { window.location.href = "video.html"; }
+function openGuide() { window.location.href = "Guide.html"; }
+function openLogo() { window.location.href = "logo.html"; }
+function openAffiche() { window.location.href = "affiche.html"; }
 
-    
-    const vipZone   = document.querySelector(".click-zone");
-    const videoZone = document.getElementById("videoZone");
-    const guideZone = document.getElementById("guideZone");
-    const logoZone  = document.getElementById("logoZone");
-    
-    // Flags
-    const fromArcade = sessionStorage.getItem("fromArcade") === "true";
-    const fromVideo  = sessionStorage.getItem("fromVideo") === "true";
-    const fromGuide  = sessionStorage.getItem("fromGuide") === "true";
-    const fromLogo   = sessionStorage.getItem("fromLogo") === "true";
-    
-    // -----------------------
-    // État par défaut
-    // -----------------------
-    vipZone.style.display   = "block";
+ const vipZone   = document.querySelector(".click-zone");
+const videoZone = document.getElementById("videoZone");
+const guideZone = document.getElementById("guideZone");
+const logoZone  = document.getElementById("logoZone");
+const afficheZone = document.getElementById("afficheZone");
+
+// Flags
+const fromArcade = sessionStorage.getItem("fromArcade") === "true";
+const fromVideo  = sessionStorage.getItem("fromVideo") === "true";
+const fromGuide  = sessionStorage.getItem("fromGuide") === "true";
+const fromLogo   = sessionStorage.getItem("fromLogo") === "true";
+
+// -----------------------
+// État par défaut
+// -----------------------
+vipZone.style.display   = "block";
+vipZone.style.pointerEvents = "auto";
+vipZone.style.opacity = "1";
+
+videoZone.style.display = "none";
+guideZone.style.display = "none";
+logoZone.style.display  = "none";
+afficheZone.style.display = "none";
+
+// ---------------------------------------------------
+// Cas 1 : Retour depuis Video.html → débloque Guide
+// ---------------------------------------------------
+if (fromVideo) {
+
+    vipZone.style.display = "none";
+    videoZone.style.display = "none";
+
+    guideZone.style.display = "block";
+    guideZone.style.pointerEvents = "auto";
+    guideZone.style.opacity = "1";
+
+    sessionStorage.removeItem("fromVideo");
+}
+
+// -------------------------------------------------------
+// Cas 2 : Retour depuis Arcade.html → débloque Vidéo
+// -------------------------------------------------------
+else if (fromArcade) {
+
+    vipZone.style.pointerEvents = "none";
+    vipZone.style.opacity = "0.5";
+
+    videoZone.style.display = "block";
+    videoZone.style.pointerEvents = "auto";
+    videoZone.style.opacity = "1";
+
+    guideZone.style.display = "none";
+
+    sessionStorage.removeItem("fromArcade");
+}
+
+// -----------------------------------------------------------
+// Cas 3 : Retour depuis Guide.html → débloque uniquement LOGO
+// -----------------------------------------------------------
+else if (fromGuide) {
+
+    vipZone.style.display = "none";
     videoZone.style.display = "none";
     guideZone.style.display = "none";
-    logoZone.style.display  = "none";
-    
-    // ---------------------------------------------------
-    // 💠 Cas 1 : Retour depuis Video.html → débloque Guide
-    // ---------------------------------------------------
-    if (fromVideo) {
-    
-        vipZone.style.display = "none";
-        videoZone.style.display = "none";
-    
-        guideZone.style.display = "block";
-        guideZone.style.pointerEvents = "auto";
-        guideZone.style.opacity = "1";
-    
-        sessionStorage.removeItem("fromVideo");
-    }
-    
-    // -------------------------------------------------------
-    // 💠 Cas 2 : Retour depuis Arcade.html → débloque Vidéo
-    // -------------------------------------------------------
-    else if (fromArcade) {
-    
-        vipZone.style.pointerEvents = "none";
-        vipZone.style.opacity = "0.5";
-    
-        videoZone.style.display = "block";
-        videoZone.style.pointerEvents = "auto";
-        videoZone.style.opacity = "1";
-    
-        guideZone.style.display = "none";
-    
-        sessionStorage.removeItem("fromArcade");
-    }
-    
-    // -----------------------------------------------------------
-    // 💠 Cas 3 : Retour depuis Guide.html → débloque uniquement LOGO
-    // -----------------------------------------------------------
-    else if (fromGuide) {
-    
-        vipZone.style.display = "none";
-        videoZone.style.display = "none";
-        guideZone.style.display = "none";
-    
-        logoZone.style.display = "block";
-        logoZone.style.pointerEvents = "auto";
-        logoZone.style.opacity = "1";
-    
-        sessionStorage.removeItem("fromGuide");
-    }
-    
-    // -----------------------------------------------------------
-    // 💠 Cas 4 : Retour depuis Logo.html → tout désactivé
-    // -----------------------------------------------------------
-    else if (fromLogo) {
-    
-        vipZone.style.display = "none";
-        videoZone.style.display = "none";
-        guideZone.style.display = "none";
-        logoZone.style.display  = "none"; // Plus rien cliquable
-    
-        vipZone.style.pointerEvents = "none";
-        videoZone.style.pointerEvents = "none";
-        guideZone.style.pointerEvents = "none";
-        logoZone.style.pointerEvents = "none";
-    
-        sessionStorage.removeItem("fromLogo");
-    }
+
+    logoZone.style.display = "block";
+    logoZone.style.pointerEvents = "auto";
+    logoZone.style.opacity = "1";
+
+    sessionStorage.removeItem("fromGuide");
+}
+
+// -----------------------------------------------------------
+// Cas 4 : Retour depuis Logo.html → débloque AFFiCHE uniquement
+// -----------------------------------------------------------
+else if (fromLogo) {
+
+    // tout caché
+    vipZone.style.display = "none";
+    videoZone.style.display = "none";
+    guideZone.style.display = "none";
+    logoZone.style.display = "none";
+
+    // seule Affiche devient dispo
+    afficheZone.style.display = "block";
+    afficheZone.style.pointerEvents = "auto";
+    afficheZone.style.opacity = "1";
+
+    sessionStorage.removeItem("fromLogo");
+}
+
     </script>
 
 
