@@ -3,13 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="affiche.css">
+
+    <title>Affiche</title>
 </head>
 <body>
-<<<<<<< HEAD:Affiche.html
-    rgin
-=======
-    npuh
->>>>>>> 0d9767dd8d83eac86b65ca78e5719db7938f786d:affiche.html
+    <img src="images/Pillar.png" class="pillar-left" alt="Pilier central">
+    <img src="images/Pillar.png" class="pillar-right" alt="Pilier central">
+
+
+
+<img src="images/Natureaffiche.png" class="affiche" alt="affiche ">
+<div class="affiche-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <br><img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+</div>  
+
+<video src="video/affiche animation.mp4" class="video" controls autoplay ></video>
+    
+<div class="video-text">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
+  <br>
+  <img src="images/pds.jpeg" class="ticket-icon" alt="Icon">
+</div>
+<a href="#" id="backButton">
+    <img src="images/flecheretour.png" class="flecheretour" alt="Retour accueil">
+</a>
+
+<script>
+    const backBtn = document.getElementById("backButton");
+    
+    backBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // empêche la navigation immédiate
+        // On mémorise qu'on revient du bouton retour d'Arcade
+    sessionStorage.setItem("fromAffiche", "true");
+        // On navigue vers index.html
+        window.location.href = "index.html";
+    });
+    </script>
 </body>
 </html>
