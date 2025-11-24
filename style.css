@@ -8,13 +8,7 @@ body {
   
 
   
-  /* Effet visuel au survol */
-  .click-zone:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-    border-radius: 8px; /* optionnel, pour adoucir les bords de la zone */
-  }
-  
+
 
   
 
@@ -60,11 +54,6 @@ body {
 
 }
 
-.clickzonevideo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-}
 
 /* Zone guide */
 .clickzoneguide {
@@ -86,11 +75,6 @@ body {
 
 }
 
-.clickzoneguide:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-}
 
 /* Zone guide */
 .clickzonelogo {
@@ -114,11 +98,6 @@ body {
 
 }
 
-.clickzonelogo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-}
 
 
 
@@ -144,12 +123,6 @@ body {
 
 }
 
-.clickzoneaffiche:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-}
-
 
 /* Zone guide */
 .clickzoneloups {
@@ -172,11 +145,6 @@ body {
   );
 }
 
-.clickzoneloups:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-}
 
 .clickzonefinal {
   position: absolute;
@@ -196,12 +164,5 @@ body {
     0% 60%  /* coin bas-gauche */
 );
 
-  background-color: rgba(72, 209, 205, 0.381);
-}
-
-.clickzonefinal:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
 }
 

@@ -22,9 +22,9 @@
 
 
 
-    <script>
+  <script>
 
-        // -----------------------------------------------------------
+    // -----------------------------------------------------------
 // Fonctions pour ouvrir les pages
 // -----------------------------------------------------------
 function openDoor() { window.location.href = "vip.html"; }
@@ -45,6 +45,8 @@ const guideZone   = document.getElementById("guideZone");
 const logoZone    = document.getElementById("logoZone");
 const afficheZone = document.getElementById("afficheZone");
 const loupsZone   = document.getElementById("loupsZone");
+const finalZone   = document.getElementById("finalZone"); // ← tu l'avais oublié ici
+
 
 // -----------------------------------------------------------
 // Flags depuis sessionStorage
@@ -55,6 +57,7 @@ const fromGuide    = sessionStorage.getItem("fromGuide") === "true";
 const fromLogo     = sessionStorage.getItem("fromLogo") === "true";
 const fromAffiche  = sessionStorage.getItem("fromAffiche") === "true";
 const fromLoup     = sessionStorage.getItem("fromFerme") === "true";
+const fromFinal    = sessionStorage.getItem("fromFinal") === "true";
 
 
 // -----------------------------------------------------------
@@ -69,73 +72,116 @@ guideZone.style.display   = "none";
 logoZone.style.display    = "none";
 afficheZone.style.display = "none";
 loupsZone.style.display   = "none";
+finalZone.style.display   = "none"; // ← AJOUT ESSENTIEL
+
 
 // -----------------------------------------------------------
 // Gestion des retours depuis d’autres pages
 // -----------------------------------------------------------
 if (fromVideo) {
-    // Après Video → débloque Guide
-    vipZone.style.display = "none";
-    guideZone.style.display = "block";
-    guideZone.style.pointerEvents = "auto";
-    guideZone.style.opacity = "1";
+// Après Video → débloque Guide
+vipZone.style.display = "none";
+guideZone.style.display = "block";
+guideZone.style.pointerEvents = "auto";
+guideZone.style.opacity = "1";
 
-    sessionStorage.removeItem("fromVideo");
+sessionStorage.removeItem("fromVideo");
 }
 else if (fromArcade) {
-    // Après Arcade → débloque Vidéo
-    vipZone.style.pointerEvents = "none";
-    vipZone.style.opacity = "0.5";
+// Après Arcade → débloque Vidéo
+vipZone.style.pointerEvents = "none";
+vipZone.style.opacity = "0.5";
 
-    videoZone.style.display = "block";
-    videoZone.style.pointerEvents = "auto";
-    videoZone.style.opacity = "1";
+videoZone.style.display = "block";
+videoZone.style.pointerEvents = "auto";
+videoZone.style.opacity = "1";
 
-    sessionStorage.removeItem("fromArcade");
+sessionStorage.removeItem("fromArcade");
 }
 else if (fromGuide) {
-    // Après Guide → débloque Logo
-    vipZone.style.display = "none";
-    videoZone.style.display = "none";
-    guideZone.style.display = "none";
+// Après Guide → débloque Logo
+vipZone.style.display = "none";
+videoZone.style.display = "none";
+guideZone.style.display = "none";
 
-    logoZone.style.display = "block";
-    logoZone.style.pointerEvents = "auto";
-    logoZone.style.opacity = "1";
+logoZone.style.display = "block";
+logoZone.style.pointerEvents = "auto";
+logoZone.style.opacity = "1";
 
-    sessionStorage.removeItem("fromGuide");
+sessionStorage.removeItem("fromGuide");
 }
 else if (fromLogo) {
-    // Après Logo → débloque Affiche
-    vipZone.style.display = "none";
-    videoZone.style.display = "none";
-    guideZone.style.display = "none";
-    logoZone.style.display = "none";
+// Après Logo → débloque Affiche
+vipZone.style.display = "none";
+videoZone.style.display = "none";
+guideZone.style.display = "none";
+logoZone.style.display = "none";
 
-    afficheZone.style.display = "block";
-    afficheZone.style.pointerEvents = "auto";
-    afficheZone.style.opacity = "1";
+afficheZone.style.display = "block";
+afficheZone.style.pointerEvents = "auto";
+afficheZone.style.opacity = "1";
 
-    sessionStorage.removeItem("fromLogo");
+sessionStorage.removeItem("fromLogo");
 }
 else if (fromAffiche) {
-    // Après Affiche → débloque Loups
-    vipZone.style.display = "none";
-    videoZone.style.display = "none";
-    guideZone.style.display = "none";
-    logoZone.style.display = "none";
-    afficheZone.style.display = "none";
+// Après Affiche → débloque Loups
+vipZone.style.display = "none";
+videoZone.style.display = "none";
+guideZone.style.display = "none";
+logoZone.style.display = "none";
+afficheZone.style.display = "none";
 
-    loupsZone.style.display = "block";
-    loupsZone.style.pointerEvents = "auto";
-    loupsZone.style.opacity = "1";
+loupsZone.style.display = "block";
+loupsZone.style.pointerEvents = "auto";
+loupsZone.style.opacity = "1";
 
-    sessionStorage.removeItem("fromAffiche");
+sessionStorage.removeItem("fromAffiche");
+}
+else if (fromLoup) {
+// Après Loups → débloque Final
+vipZone.style.display = "none";
+videoZone.style.display = "none";
+guideZone.style.display = "none";
+logoZone.style.display = "none";
+afficheZone.style.display = "none";
+loupsZone.style.display = "none";
+
+finalZone.style.display = "block";
+finalZone.style.pointerEvents = "auto";
+finalZone.style.opacity = "1";
+
+sessionStorage.removeItem("fromFerme");
+}
+else if (fromFinal) {
+// Après Final → tout devient dispo
+vipZone.style.display     = "block";
+videoZone.style.display   = "block";
+guideZone.style.display   = "block";
+logoZone.style.display    = "block";
+afficheZone.style.display = "block";
+loupsZone.style.display   = "block";
+finalZone.style.display   = "block";
+
+vipZone.style.pointerEvents     = "auto";
+videoZone.style.pointerEvents   = "auto";
+guideZone.style.pointerEvents   = "auto";
+logoZone.style.pointerEvents    = "auto";
+afficheZone.style.pointerEvents = "auto";
+loupsZone.style.pointerEvents   = "auto";
+finalZone.style.pointerEvents   = "auto";
+
+vipZone.style.opacity     = "1";
+videoZone.style.opacity   = "1";
+guideZone.style.opacity   = "1";
+logoZone.style.opacity    = "1";
+afficheZone.style.opacity = "1";
+loupsZone.style.opacity   = "1";
+finalZone.style.opacity   = "1";
+
+sessionStorage.removeItem("fromFinal");
 }
 
-
-    </script>
-
+</script>
 
 </body>
 </html>
