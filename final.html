@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="final.css">
+    <title>Final</title>
 </head>
 <body>
-rinherb
+
+
+    <img src="images/Pillar.png" class="pillar-center" alt="Pilier central">
+    
+    <img src="images/finalsilouhette.png" class="final" alt="Fin">
+
+    <div class="final-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      
+    </div>
+    <a href="#" id="backButton">
+        <img src="images/flecheretour.png" class="flecheretour" alt="Retour accueil">
+    </a>
+    <script>
+        const backBtn = document.getElementById("backButton");
+        
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // empêche la navigation immédiate
+            // On mémorise qu'on revient du bouton retour d'Arcade
+            sessionStorage.setItem("fromFinal", "true");
+            // On navigue vers index.html
+            window.location.href = "index.html";
+        });
+        </script>
+
 </body>
 </html>
