@@ -53,7 +53,7 @@ body {
   top: 50%;
   right: 79%; /* à gauche du ticket */
   transform: translateY(-50%) translateX(-10px);
-  width: 200px;
+  width: 250px;
   background: rgba(0,0,0,0.85);
   color: #fff;
   padding: 12px;
@@ -73,11 +73,17 @@ body {
 }
 
 
+.icon-row {
+  display: flex;
+  gap: 10px;          /* espace entre les icônes */
+  margin-top: 40px;
+  align-items: center;
+}
+
 .ticket-icon {
   width: 40px;
   height: auto;
-  display: block;
-  margin: 10px auto 0;
+  margin: 10px;          /* on enlève le margin auto qui les poussait */
 }
 
 /* --- Carte de visite (à droite) --- */
@@ -185,22 +191,21 @@ body {
   transition: transform 0.3s ease;
 }
 
-.interrogation-img {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  width: 40%; /* réduit la taille */
-  height: auto;
-  transform: translate(-50%, -50%); /* centre l'image */
-  object-fit: contain;
-  filter: brightness(0.3); /* foncé par défaut */
-  transition: filter 0.3s ease;
+
+.flecheretour {
+  position: fixed;      /* Toujours visible en haut à gauche même en scroll */
+  top: 20px;            /* Distance depuis le haut */
+  left: 40px;           /* Distance depuis la gauche */
+  width: 140px;          /* Taille de base */
+  height: auto;         /* Conserve les proportions */
+  cursor: pointer;      /* Curseur cliquable */
+  transition: transform 0.2s ease;
+  z-index: 1000;        /* Passe devant tout */
 }
 
-.click-zone:hover .interrogation-img {
-  filter: brightness(1); /* plus clair au hover */
+.flecheretour:hover {
+  transform: scale(1.1);  /* Petit zoom au survol */
 }
-
 
 /* --- Responsivité --- */
 
