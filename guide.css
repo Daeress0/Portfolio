@@ -49,7 +49,7 @@ body {
     top: 50%;
     right: 79%;
     transform: translateY(-50%) translateX(-10px);
-    width: 200px;
+    width: 300px;
     background: rgba(0,0,0,0.85);
     color: #fff;
     padding: 12px;
@@ -67,12 +67,11 @@ body {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
-  
+  /* --- Icône ticket --- */
   .ticket-icon {
     width: 40px;
     height: auto;
-    display: block;
-    margin: 10px auto 0;
+    margin: 10px;          /* on enlève le margin auto qui les poussait */
   }
   
   /* --- Élément droit (mockup) --- */

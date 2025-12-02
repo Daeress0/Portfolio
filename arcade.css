@@ -174,12 +174,5 @@ body {
     transform: scale(1.1);  /* Petit zoom au survol */
   }
   
-  /* Pour petits écrans */
-  @media (max-width: 600px) {
-    .retour {
-      top: 10px;
-      left: 10px;
-      width: 30px;          /* Image légèrement plus petite */
-    }
-  }
+
   

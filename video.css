@@ -68,10 +68,8 @@ body {
   .ticket-icon {
     width: 40px;
     height: auto;
-    display: block;
-    margin: 10px auto 0;
+    margin: 10px;          /* on enlève le margin auto qui les poussait */
   }
-  
 
   .flecheretour {
     position: fixed;      /* Toujours visible en haut à gauche même en scroll */
