@@ -55,7 +55,8 @@ body {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.4s ease, transform 0.4s ease;
-        line-height: 1.4;
+        font-family: 'Calibri', sans-serif;
+        line-height: 1.7;
       }
       
       /* Hover sur la vidéo */
@@ -98,11 +99,13 @@ body {
     padding: 12px;
     border-radius: 8px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.7;
     text-align: left;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
+    font-family: 'Calibri', sans-serif;
+
 }
 
 .affiche:hover + .affiche-text {

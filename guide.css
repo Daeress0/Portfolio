@@ -55,12 +55,13 @@ body {
     padding: 12px;
     border-radius: 8px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.7;
     text-align: left;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 5;
+    font-family: 'Calibri', sans-serif;
   }
   
   .bou:hover + .bou-text {
@@ -99,10 +100,11 @@ body {
     padding: 12px;
     border-radius: 8px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.7;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
+    font-family: 'Calibri', sans-serif;
   }
   
   .mockup:hover + .mockup-text {
@@ -127,7 +129,7 @@ body {
   /* Correction : texte → .front-text */
   .front-text {
     position: absolute;
-    bottom: 70%;
+    bottom: 50%;
     left: 33%;
     transform: translateY(-50%) translateX(10px);
     width: 700px;
@@ -136,10 +138,12 @@ body {
     padding: 12px;
     border-radius: 8px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.7;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
+    font-family: 'Calibri', sans-serif;
+    z-index: 20;
   }
   
   .front:hover + .front-text {

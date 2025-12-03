@@ -49,7 +49,7 @@ body {
 /* Texte de l'affiche — maintenant au milieu */
 .affiche-text {
     position: absolute;
-    bottom: 75%;
+    bottom: 50%;
     left: 38%; /* ancien logo-text */
     transform: translateY(-50%) translateX(10px);
     width: 500px;
@@ -62,7 +62,9 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
-    line-height: 1.4;
+    line-height: 1.7;
+    font-family: 'Calibri', sans-serif;
+    z-index: 20;
 }
 
 .affiche:hover + .affiche-text {
@@ -99,11 +101,12 @@ body {
     padding: 12px;
     border-radius: 8px;
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.7;
     text-align: left;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
+    font-family: 'Calibri', sans-serif;
 }
 
 .logo:hover + .logo-text {
@@ -142,7 +145,8 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
-    line-height: 1.4;
+    line-height: 1.7;
+    font-family: 'Calibri', sans-serif;
 }
 
 .estampille:hover + .estampille-text {
