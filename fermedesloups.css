@@ -126,7 +126,7 @@ body {
   /* Correction : texte → .logo-text */
   .affiche-text {
     position: absolute;
-    bottom: 70%;
+    bottom: 73%;
     left: 33%;
     transform: translateY(-50%) translateX(10px);
     width: 700px;
