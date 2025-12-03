@@ -92,7 +92,7 @@ body {
     top: 40%;
     right: 79%; /* ancien affiche-text */
     transform: translateY(-50%) translateX(-10px);
-    width: 220px;
+    width: 320px;
     background: rgba(0,0,0,0.85);
     color: #fff;
     padding: 12px;
