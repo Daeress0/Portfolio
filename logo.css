@@ -89,3 +89,50 @@ body {
   .flecheretour:hover {
     transform: scale(1.1);  /* Petit zoom au survol */
   }
+
+
+  /* --- Responsivité --- */
+
+/* Tablettes / petits laptops */
+@media (max-width: 900px) {
+
+  /* Réduction du pilier */
+  .pillar-center {
+    width: 30%;
+  }
+
+  /* Réduction du logo (remplace l'ancienne vidéo) */
+  .logo {
+    width: 50%;
+  }
+
+  /* Réduction du texte */
+  .logo-text {
+    width: 60%;
+    font-size: 0.8rem;
+  }
+}
+
+/* Téléphones : expérience desktop uniquement */
+@media (max-width: 600px) {
+
+  .pillar-center,
+  .logo,
+  .logo-text {
+    display: none !important;
+  }
+
+  body {
+    background: black !important;
+    color: white !important;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+  }
+
+  body::before {
+    content: "Cette expérience est prévue pour ordinateur 💻";
+    display: block;
+    margin-top: 30vh;
+  }
+}

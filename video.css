@@ -86,3 +86,50 @@ body {
   .flecheretour:hover {
     transform: scale(1.1);  /* Petit zoom au survol */
   }
+
+
+ /* --- Responsivité --- */
+
+/* Tablettes / petits laptops */
+@media (max-width: 900px) {
+
+  /* Réduction du pilier */
+  .pillar-center {
+    width: 30%;
+  }
+
+  /* Réduction de la vidéo (ancien .ticket) */
+  .video {
+    width: 50%;
+  }
+
+  /* Réduction du texte (ancien .ticket-text / .visite-text) */
+  .video-text {
+    width: 70%;
+    font-size: 0.8rem;
+  }
+}
+
+/* Téléphones : expérience desktop uniquement, donc tout disparaît */
+@media (max-width: 600px) {
+
+  .pillar-center,
+  .video,
+  .video-text {
+    display: none !important;
+  }
+
+  body {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+  }
+
+  body::before {
+    content: "Cette expérience est prévue pour ordinateur 💻";
+    display: block;
+    margin-top: 30vh;
+  }
+}
