@@ -90,28 +90,10 @@ body {
 
  /* --- Responsivité --- */
 
-/* Tablettes / petits laptops */
-@media (max-width: 900px) {
 
-  /* Réduction du pilier */
-  .pillar-center {
-    width: 30%;
-  }
-
-  /* Réduction de la vidéo (ancien .ticket) */
-  .video {
-    width: 50%;
-  }
-
-  /* Réduction du texte (ancien .ticket-text / .visite-text) */
-  .video-text {
-    width: 70%;
-    font-size: 0.8rem;
-  }
-}
 
 /* Téléphones : expérience desktop uniquement, donc tout disparaît */
-@media (max-width: 600px) {
+@media (max-width: 900px), (max-height: 900px) {
 
   .pillar-center,
   .video,

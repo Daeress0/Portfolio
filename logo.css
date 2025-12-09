@@ -93,28 +93,9 @@ body {
 
   /* --- Responsivité --- */
 
-/* Tablettes / petits laptops */
-@media (max-width: 900px) {
-
-  /* Réduction du pilier */
-  .pillar-center {
-    width: 30%;
-  }
-
-  /* Réduction du logo (remplace l'ancienne vidéo) */
-  .logo {
-    width: 50%;
-  }
-
-  /* Réduction du texte */
-  .logo-text {
-    width: 60%;
-    font-size: 0.8rem;
-  }
-}
 
 /* Téléphones : expérience desktop uniquement */
-@media (max-width: 600px) {
+@media (max-width: 900px), (max-height: 900px) {
 
   .pillar-center,
   .logo,

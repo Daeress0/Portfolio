@@ -212,30 +212,10 @@ body {
 
 /* --- Responsivité --- */
 
-/* Tablettes / petits laptops */
-@media (max-width: 900px) {
-  .ticket,
-  .visite,
-  .affiche {
-    width: 25%;
-  }
 
-  .ticket-text,
-  .visite-text,
-  .affiche-text {
-    width: 60%;
-    font-size: 0.8rem;
-  }
-
-  .pillar-left,
-  .pillar-center,
-  .pillar-right {
-    width: 20%;
-  }
-}
 
 /* Téléphones : on masque le décor et évite les bugs */
-@media (max-width: 600px) {
+@media (max-width: 900px), (max-height: 900px) {
 
   .ticket,
   .visite,
@@ -247,7 +227,7 @@ body {
   .pillar-center,
   .pillar-right,
   .click-zone {
-    display: none !important;
+    display: none ;
   }
 
   body {

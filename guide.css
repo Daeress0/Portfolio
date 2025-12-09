@@ -153,28 +153,8 @@ body {
   
   /* --- Responsivité --- */
   
-  @media (max-width: 900px) {
-    .bou,
-    .mockup,
-    .front {
-      width: 25%;
-    }
-  
-    .bou-text,
-    .mockup-text,
-    .front-text {
-      width: 60%;
-      font-size: 0.8rem;
-    }
-  
-    .pillar-left,
-    .pillar-center,
-    .pillar-right {
-      width: 20%;
-    }
-  }
-  
-  @media (max-width: 600px) {
+ 
+  @media (max-width: 900px), (max-height: 900px) {
     .bou,
     .mockup,
     .front,

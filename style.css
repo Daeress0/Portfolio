@@ -166,3 +166,34 @@ body {
 
 }
 
+/* ========================================================= */
+/* ========================== MOBILE ======================== */
+/* ======= L’expérience n'est PAS prévue pour mobile ======= */
+/* ========================================================= */
+
+@media (max-width: 900px), (max-height: 900px) {
+
+  .click-zone,
+  .clickzonevideo,
+  .clickzoneguide,
+  .clickzonelogo,
+  .clickzoneaffiche,
+  .clickzoneloups,
+  .clickzonefinal {
+      display: none ;
+  }
+
+  body {
+      background: black !important;
+      color: white !important;
+      text-align: center;
+      padding: 40px;
+      font-size: 1.2rem;
+  }
+
+  body::before {
+      content: "Cette expérience est prévue pour ordinateur 💻";
+      display: block;
+      margin-top: 30vh;
+  }
+}

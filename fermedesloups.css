@@ -152,29 +152,10 @@ body {
   }
   
   /* --- Responsivité --- */
+
   
-  @media (max-width: 900px) {
-    .logo,
-    .banniere,
-    .affiche {
-      width: 25%;
-    }
   
-    .logo-text,
-    .banniere-text,
-    .affiche-text {
-      width: 60%;
-      font-size: 0.8rem;
-    }
-  
-    .pillar-left,
-    .pillar-center,
-    .pillar-right {
-      width: 20%;
-    }
-  }
-  
-  @media (max-width: 600px) {
+  @media (max-width: 900px), (max-height: 900px) {
     .logo,
     .banniere,
     .affiche,
