@@ -171,7 +171,7 @@ body {
 /* ======= L’expérience n'est PAS prévue pour mobile ======= */
 /* ========================================================= */
 
-@media (max-width: 900px), (max-height: 900px) {
+@media (max-width: 800px), (max-height: 800px) {
 
   .click-zone,
   .clickzonevideo,
@@ -196,4 +196,5 @@ body {
       display: block;
       margin-top: 30vh;
   }
+
 }
