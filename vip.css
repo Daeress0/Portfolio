@@ -215,8 +215,7 @@ body {
 
 
 /* Téléphones : on masque le décor et évite les bugs */
-@media (max-width: 900px), (max-height: 900px) {
-
+@media (max-width: 500px) {
   .ticket,
   .visite,
   .affiche,
