@@ -95,8 +95,7 @@ body {
 
 
 /* Téléphones : expérience desktop uniquement */
-@media (max-width: 900px), (max-height: 900px) {
-
+@media (max-width: 500px) {
   .pillar-center,
   .logo,
   .logo-text {
